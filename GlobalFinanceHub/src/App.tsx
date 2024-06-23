@@ -4,6 +4,7 @@ import { MenuUnfoldOutlined, MenuFoldOutlined } from '@ant-design/icons';
 import Logo from './SidebarComponent/LogoComponent';
 import MenuListComponent from './SidebarComponent/MenuListComponent';
 import ToggleThemeButtonComponent from './SidebarComponent/ToggleThemeButtonComponent';
+import MarketDataFeed from './Socket/MarketDataFeedComponent';
 
 const { Header, Sider } = Layout;
 
@@ -12,7 +13,7 @@ function App() {
   const [ darkTheme, setDarkTheme ] = useState(true);
   const [collapsed, setCollapsed] = useState(false);
 
-  
+  const auth_token = "ACCESS_TOKEN";
 
   const toggleTheme = () => {
     setDarkTheme(!darkTheme);
@@ -47,6 +48,7 @@ function App() {
             />
           </Header>
         </Layout>
+        <MarketDataFeed token={auth_token} />
       </Layout>
     </>
   )
